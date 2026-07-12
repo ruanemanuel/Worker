@@ -30,13 +30,13 @@ export default function Screen() {
               </button>
               {/*Navbar*/}
               <nav className="flex flex-col gap-3 mt-8">
-                <button className="hover:bg-white/20 rounded-md p-2 pointer">
+                <button className="hover:bg-white/20 rounded-md p-2 pointer border-[#68696d] border-2">
                   Início
                 </button>
-                <button className="hover:bg-white/20 rounded-md p-2 pointer">
+                <button className="hover:bg-white/20 rounded-md p-2 pointer border-[#68696d] border-2">
                   Disciplinas
                 </button>
-                <button className="hover:bg-white/20 rounded-md p-2 pointer">
+                <button className="hover:bg-white/20 rounded-md p-2 pointer border-[#68696d] border-2">
                   Sobre
                 </button>
               </nav>
@@ -56,13 +56,13 @@ export default function Screen() {
               </button>
               {/*Navbar*/}
               <nav className="flex flex-col gap-3 mt-8">
-                <button className="hover:bg-white/20 rounded-md p-2 pointer">
+                <button className="hover:bg-white/20 rounded-md p-2 pointer border-[#68696d] border-2">
                   <FiHome />
                 </button>
-                <button className="hover:bg-white/20 rounded-md p-2 pointer">
+                <button className="hover:bg-white/20 rounded-md p-2 pointer border-[#68696d] border-2">
                   <MdOutlineSchool />
                 </button>
-                <button className="hover:bg-white/20 rounded-md p-2 pointer">
+                <button className="hover:bg-white/20 rounded-md p-2 pointer border-[#68696d] border-2">
                   <LuQuestion />
                 </button>
               </nav>
