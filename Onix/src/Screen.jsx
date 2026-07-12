@@ -42,7 +42,7 @@ export default function Screen() {
               </nav>
             </aside>
           ) : (
-            <aside className="p-6 flex w-20 h-screen bg-zinc-900 justift-center">
+            <aside className="p-6 flex w-20 h-screen bg-zinc-900 justify-center">
               <button
                 className="absolute top-3 text-xl p-2"
                 style={{
