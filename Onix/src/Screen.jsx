@@ -7,12 +7,15 @@ import { MdOutlineSchool } from "react-icons/md"
 import Welcome from "./pages/Welcome";
 import Home from "./pages/Home"
 import React, { useState } from "react";
+import Sidebar from "./components/Sidebar/index.js"
+import Navbar from "./components/Navbar/index.js";
+
 
 export default function Screen() {
   const [activeMenu, setActiveMenu] = useState(true);
   const [homeClicked, setHomeClicked] = useState(false);
-
-
+  const [subjectClicked, setSubjectClicked] = useState(false);
+  const [aboutClicked, setAboutClicked] = useState(false);
 
   return (
     <div className="h-screen dark:bg-zinc-800 bg-mist-300">
@@ -20,59 +23,17 @@ export default function Screen() {
         <div className="flex dark:text-white text-black space-x-4">
           {/*Sidebar*/}
           {activeMenu ? (
-            <aside className="p-6 flex w-40 h-screen bg-zinc-900 justify-center text-white">
-              <button
-                className="absolute top-3 text-xl p-2"
-                style={{
-                  cursor: "pointer",
-                  background: "#68696d",
-                  borderRadius: "25%",
-                }}
-                type="button"
-              >
-                <FiSettings />
-              </button>
-              <nav className="flex flex-col gap-3 mt-8 text-white">
-                <button className="hover:bg-white/20 rounded-md p-2 pointer border-[#68696d] border-2"
-                        onClick={() => setHomeClicked(true)}
-                >
-                  Início
-                </button>
-                <button className="hover:bg-white/20 rounded-md p-2 pointer border-[#68696d] border-2">
-                  Disciplinas
-                </button>
-                <button className="hover:bg-white/20 rounded-md p-2 pointer border-[#68696d] border-2">
-                  Sobre
-                </button>
-              </nav>
-            </aside>
+            <Sidebar.Root width={40} padding={6}>
+              <Sidebar.Icon icon={<FiSettings />} />
+              <Navbar.Root>
+                <Navbar.Tab title="Início" callback={setHomeClicked}/>
+                <Navbar.Tab title="Disciplinas" callback={setSubjectClicked} />
+                <Navbar.Tab title="Sobre" callback={setAboutClicked}/>
+              </Navbar.Root>
+            </Sidebar.Root>
           ) : (
-            <aside className="p-6 flex w-20 h-screen bg-zinc-900 justify-center">
-              <button
-                className="absolute top-3 text-xl p-2"
-                style={{
-                  cursor: "pointer",
-                  background: "#68696d",
-                  borderRadius: "25%",
-                }}
-                type="button"
-              >
-                <FiSettings />
-              </button>
-              <nav className="flex flex-col gap-3 mt-8">
-                <button className="hover:bg-white/20 rounded-md p-2 pointer border-[#68696d] border-2"
-                        onClick={() => {setHomeClicked(true)}}
-                >
-                  <FiHome />
-                </button>
-                <button className="hover:bg-white/20 rounded-md p-2 pointer border-[#68696d] border-2">
-                  <MdOutlineSchool />
-                </button>
-                <button className="hover:bg-white/20 rounded-md p-2 pointer border-[#68696d] border-2">
-                  <LuQuestion />
-                </button>
-              </nav>
-            </aside>
+            <Sidebar.Root width={0} padding={0}>
+            </Sidebar.Root>
           )}
 
           {/*Tela Inicial*/}
