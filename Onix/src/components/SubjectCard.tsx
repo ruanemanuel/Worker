@@ -7,7 +7,7 @@ interface SubjectCard{
     subjectDesc: string,
 }
 
-const Card = ({subjectTitle, subjectDesc}: SubjectCard): ReactElement => {
+const SubjectCard = ({subjectTitle, subjectDesc}: SubjectCard): ReactElement => {
 
     return(
         <div>
