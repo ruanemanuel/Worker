@@ -1,16 +1,24 @@
-# React + Vite
+# Onix -- 
+pt:
+Essa aplicação remota, produzida pelo desenvolvedor Ruan Emanuel, tem como objetivo auxiliar os estudantes na área de Desenvolvimento de Sistemas que têm dificuldade nas disciplinas do curso técnico.
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+en:
+This remote application, produced by the developer Ruan Emanuel, has an objective of contributing the students in the System Development area who struggles at the tecnical courses subjects.
 
-Currently, two official plugins are available:
+pt:
+## Esse projeto foi desenvolvido no React  + Vite Typescript
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+en:
+## This project was developed in React + Vite Typescript
 
-## React Compiler
+pt:
+&copy; Material Educacional - Todos os direitos são reservados.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+en:
+&copy; Educational Material - All of the rights are reserved.
 
-## Expanding the Oxlint configuration
+Meu Github/My Github:  
+https://github.com/ruanemanuel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Meu Instagram/My Instagram:  
+https://www.instagram.com/ruanemanuel.dev/
