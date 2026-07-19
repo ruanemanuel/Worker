@@ -9,7 +9,7 @@ interface SidebarRoot{
 
 
 const SidebarRoot = ({children, width, padding}: SidebarRoot): ReactElement => {
-  const styles = `p-${padding} flex w-${width} h-screen bg-zinc-900 justify-center text-white`
+  const styles = `p-${padding} flex w-${width} min-h-screen bg-zinc-900 text-white`
   return (
     <aside className={styles}>
       {children}

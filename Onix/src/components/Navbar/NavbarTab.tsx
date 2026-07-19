@@ -1,17 +1,17 @@
-import {Link, NavLink} from "react-router-dom";
+import { Link } from "react-router-dom";
 import React from 'react';
 
-interface NavbarTab extends React.HTMLAttributes<HTMLAnchorElement>{
+interface NavbarTab{
   title: string,
+  namePage: string,
 }
 
 
-const NavbarTab = ({ title}: NavbarTab) => {
+const NavbarTab = ({ title, namePage }: NavbarTab) => {
   return (
-    <a className="hover:bg-white/20 rounded-md p-2 pointer border-[#68696d] border-2 text-center"
-    >
-      {title}
-    </a>
+    <Link to={`/${namePage.toLowerCase()}`} className="hover:bg-white/20 rounded-md p-2 pointer border-[#68696d] border-2 text-center transition duration-200">
+        <b>{title}</b>
+    </Link>
   )
 }
 

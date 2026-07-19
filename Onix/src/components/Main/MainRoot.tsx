@@ -1,8 +1,16 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, ReactNode } from 'react'
 
-const MainRoot = (): ReactElement => {
+type MainRoot = {
+  children: ReactNode
+}
+
+const MainRoot = ({children}: MainRoot): ReactElement => {
   return (
-    <div>MainRoot</div>
+    <main className="flex">
+      <div className="space-x flex mt-5">
+        {children}
+      </div>
+    </main>
   )
 }
 

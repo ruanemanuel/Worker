@@ -3,99 +3,62 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 
 import { FiSettings } from "react-icons/fi";
-import Welcome from "./pages/Welcome";
-import Home from "./pages/Home.js";
-import Subject from "./pages/Subject.js";
-import About from "./pages/About.js"
-import React, { useState } from "react";
-import Sidebar from "./components/Sidebar/index.js"
+
+import Home from "./routes/Home";
+import Subject from "./routes/Subject";
+import React, { ReactElement, useState } from "react";
+import Sidebar from "./components/Sidebar/index.js";
 import Navbar from "./components/Navbar/index.js";
-import Main from "./components/Main/index.js"
+import Main from "./components/Main/index";
+import Footer from "./components/Footer/index";
 type Status = boolean;
 
-export default function Screen() {
+export default function Screen(): ReactElement {
   const [activeMenu, setActiveMenu] = useState<Status>(true);
   const [homeClicked, setHomeClicked] = useState<Status>(false);
   const [subjectClicked, setSubjectClicked] = useState<Status>(false);
   const [aboutClicked, setAboutClicked] = useState<Status>(false);
 
-
-
-
-  const renderPage = (
-    homeStatus: Status,
-    subjectStatus: Status,
-    aboutStatus: Status
-  ) => {
-    setHomeClicked(homeStatus);
-    setSubjectClicked(subjectStatus);
-    setAboutClicked(aboutStatus);
-  }
-
-
-
-
-
-
   return (
-    <div className="h-screen dark:bg-zinc-800 bg-mist-300">
+    <div className="h-screen">
       <BrowserRouter>
         <div className="flex dark:text-white text-black space-x-4">
           {/*Sidebar*/}
           {activeMenu ? (
-            <Sidebar.Root width={40} padding={6}>
-              <Sidebar.Icon icon={<FiSettings />} />
+            <Sidebar.Root width={30} padding={5}>
               <Navbar.Root>
-                <Navbar.Tab title="Início" onClick={() => renderPage(true, false, false)} />
-                <Navbar.Tab title="Disciplinas" onClick={() => renderPage(false, true, false)} />
-                <Navbar.Tab title="Sobre" onClick={() => renderPage(false, false, true)} />
+                <Sidebar.Icon icon={<FiSettings className="text-4xl p-1 text-white w-10 justify-center text-center ml-7 border-[#68696d] border hover:bg-white/20 transition duration-200 rounded-[5px] pointer" type="button" />} />
+                <hr className="text-zinc-600/60 space-y-0 border-2 rounded-xs"/>
+                <Navbar.Tab title="Início" namePage="" />
+                <hr className="text-zinc-600/60 space-y-0 border-2 rounded-xs"/>
+                <Navbar.Tab title="Disciplinas" namePage="subject" />
+                <hr className="text-zinc-600/60 space-y-0 border-2 rounded-xs"/>
               </Navbar.Root>
             </Sidebar.Root>
           ) : (
-            <Sidebar.Root width={0} padding={0}>
-            </Sidebar.Root>
+            <Sidebar.Root width={0} padding={0}></Sidebar.Root>
           )}
 
           {/*Tela Inicial*/}
-          <main className="flex">
-            <div className="space-x-2 flex mt-5">
+          <Main.Root>
+            <div>
               <Menu
-                className="text-2xl bg-zinc-400 text-black rounded-xs pointer"
-                onClick={() => setActiveMenu(prevActiveMenu => !prevActiveMenu)}
+                className="dark:border-zinc-400 size-8 text-black dark:text-zinc-400 rounded-xs pointer border-zinc-800 hover:bg-black/10 dark:hover:bg-white/10 transition duration-250"
+                onClick={() =>
+                  setActiveMenu((prevActiveMenu) => !prevActiveMenu)
+                }
               />
             </div>
-            {
-              (!homeClicked && !subjectClicked && !aboutClicked) && (
-                <Welcome />
-              )
-            }
-            {
-              homeClicked && (
-                <Home />
-              )
-            }
-            {
-              subjectClicked && (
-                <Subject />
-              )
-            }
-            {
-              homeClicked && (
-                <About />
-              )
-            }
-            
-          </main>
+            <Routes>
+              {/*Rotas de Navegação*/}
+              <Route path="/" element={<Home />} />
+              <Route path="/subject" element={<Subject />} />
+            </Routes>
+          </Main.Root>
         </div>
-        <div>
-          <Routes>
-            {/*Rotas de Navegação*/}
-            <Route path="/" element={<Welcome />}  />
-            <Route path="/home" element={<Home />} />
-            <Route path="/subject" element={<Subject />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
-        </div>
+        <Footer.Root>
+          <Footer.Content />
+        </Footer.Root>
       </BrowserRouter>
     </div>
   );
