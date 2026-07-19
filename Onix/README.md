@@ -1,4 +1,4 @@
-# Onix -- 
+# Onix -- Dashboard for Students
 pt:
 Essa aplicação remota, produzida pelo desenvolvedor Ruan Emanuel, tem como objetivo auxiliar os estudantes na área de Desenvolvimento de Sistemas que têm dificuldade nas disciplinas do curso técnico.
 
