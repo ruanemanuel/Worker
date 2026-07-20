@@ -1,12 +1,11 @@
+import { ReactElement } from "react";
 
-
-import { ReactElement } from "react"
-
-interface SubjectCard{
-    subjectTitle: string,
-    subjectDesc: string,
+interface SubjectCard {
+  subjectTitle: string;
+  subjectDesc: string;
 }
 
+<<<<<<< HEAD
 const SubjectCard = ({subjectTitle, subjectDesc}: SubjectCard): ReactElement => {
 
     return(
@@ -16,3 +15,17 @@ const SubjectCard = ({subjectTitle, subjectDesc}: SubjectCard): ReactElement => 
     )
 }
 export default Card
+=======
+const SubjectCard = ({
+  subjectTitle,
+  subjectDesc,
+}: SubjectCard): ReactElement => {
+  return (
+    <div>
+      <h1>{subjectTitle}</h1>
+      <p>{subjectDesc}</p>
+    </div>
+  );
+};
+export default SubjectCard;
+>>>>>>> 637b00c (Configurando a página de Configurações)

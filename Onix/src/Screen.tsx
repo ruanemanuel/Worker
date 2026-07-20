@@ -2,57 +2,71 @@ import { IoMdMenu as Menu } from "react-icons/io";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 
-import { FiSettings } from "react-icons/fi";
+import { FiSettings as Configurations } from "react-icons/fi";
 
 import Home from "./routes/Home";
 import Subject from "./routes/Subject";
-import React, { ReactElement, useState } from "react";
-import Sidebar from "./components/Sidebar/index.js";
-import Navbar from "./components/Navbar/index.js";
+import Settings from "./routes/Settings";
+import { ReactElement, useState } from "react";
+import Sidebar from "./components/Sidebar/index";
+import Navbar from "./components/Navbar/index";
 import Main from "./components/Main/index";
 import Footer from "./components/Footer/index";
-type Status = boolean;
+
+
+type State = boolean;
 
 export default function Screen(): ReactElement {
-  const [activeMenu, setActiveMenu] = useState<Status>(true);
-  const [homeClicked, setHomeClicked] = useState<Status>(false);
-  const [subjectClicked, setSubjectClicked] = useState<Status>(false);
-  const [aboutClicked, setAboutClicked] = useState<Status>(false);
+  const [activeMenu, setActiveMenu] = useState<State>(true);
 
   return (
     <div className="h-screen">
       <BrowserRouter>
         <div className="flex dark:text-white text-black space-x-4">
-          {/*Sidebar*/}
+          {/* Barra Lateral */}
           {activeMenu ? (
             <Sidebar.Root width={30} padding={5}>
+              {/* Barra de Navegação */}
               <Navbar.Root>
-                <Sidebar.Icon icon={<FiSettings className="text-4xl p-1 text-white w-10 justify-center text-center ml-7 border-[#68696d] border hover:bg-white/20 transition duration-200 rounded-[5px] pointer" type="button" />} />
-                <hr className="text-zinc-600/60 space-y-0 border-2 rounded-xs"/>
+                <Sidebar.Icon
+                  icon={
+                    <Configurations
+                      className="text-4xl p-1 text-white w-10 justify-center text-center ml-7 border-[#68696d] border hover:bg-white/20 transition duration-200 rounded-[5px] pointer"
+                      
+                    />
+                  }
+                  page="settings"
+                />
+                <hr className="text-zinc-600/60 space-y-0 border-2 rounded-xs" />
                 <Navbar.Tab title="Início" namePage="" />
-                <hr className="text-zinc-600/60 space-y-0 border-2 rounded-xs"/>
+                <hr className="text-zinc-600/60 space-y-0 border-2 rounded-xs" />
                 <Navbar.Tab title="Disciplinas" namePage="subject" />
-                <hr className="text-zinc-600/60 space-y-0 border-2 rounded-xs"/>
+                <hr className="text-zinc-600/60 space-y-0 border-2 rounded-xs" />
               </Navbar.Root>
             </Sidebar.Root>
           ) : (
             <Sidebar.Root width={0} padding={0}></Sidebar.Root>
           )}
 
-          {/*Tela Inicial*/}
+          {/* Tela Inicial */}
           <Main.Root>
             <div>
-              <Menu
-                className="dark:border-zinc-400 size-8 text-black dark:text-zinc-400 rounded-xs pointer border-zinc-800 hover:bg-black/10 dark:hover:bg-white/10 transition duration-250"
-                onClick={() =>
-                  setActiveMenu((prevActiveMenu) => !prevActiveMenu)
+              <Main.Icon
+                icon={
+                  <Menu
+                    className="dark:border-zinc-400 size-8 text-black dark:text-zinc-400 rounded-xs pointer border-zinc-800 hover:bg-black/10 dark:hover:bg-white/10 transition duration-250"
+                    onClick={() =>
+                      setActiveMenu((prevActiveMenu) => !prevActiveMenu)
+                    }
+                  />
                 }
               />
             </div>
             <Routes>
-              {/*Rotas de Navegação*/}
+              {/* Rotas de Navegação */}
               <Route path="/" element={<Home />} />
               <Route path="/subject" element={<Subject />} />
+              <Route path="/settings" element={<Settings />}></Route>
             </Routes>
           </Main.Root>
         </div>

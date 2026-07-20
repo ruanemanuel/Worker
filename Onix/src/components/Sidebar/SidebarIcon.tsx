@@ -1,17 +1,19 @@
 
+import { Link } from 'react-router-dom'
 import React, { ReactNode, ReactElement } from 'react'
 
 interface SidebarIcon{
-  icon: ReactNode
+  icon: ReactNode,
+  page: string
 }
 
 
 
-const SidebarIcon = ({icon} : SidebarIcon): ReactElement => {
+const SidebarIcon = ({icon, page} : SidebarIcon): ReactElement => {
   return (
-    <div>
+    <Link to={`/${page}`} >
       {icon}
-    </div>
+    </Link>
   )
 }
 
