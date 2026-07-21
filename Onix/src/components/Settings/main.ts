@@ -1,12 +1,11 @@
-import SettingsAction from "./SettingsAction";
-import SettingsType from "./SettingsType";
+
+import { SettingsType } from "./SettingsType";
 
 
 
 
-const SettingsOption = {
+const Settings = {
     Type: SettingsType,
-    Action: SettingsAction
 }
 
-export default SettingsOption
+export default Settings

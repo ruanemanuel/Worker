@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
 
-const Subject = (): ReactElement => {
+const SubjectView = (): ReactElement => {
   return (
     <div className='px-6'>
       Subject
@@ -8,4 +8,4 @@ const Subject = (): ReactElement => {
   )
 }
 
-export default Subject
+export default SubjectView

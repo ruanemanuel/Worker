@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-
+import "../index.css"
 const Home = (): ReactElement => {
   return (
     <div className='px-6'>
@@ -8,7 +8,7 @@ const Home = (): ReactElement => {
           Onix - Portal de Aulas
         </h1>
       </div>
-      <div className='grid grid-rows-2 gap-5'>
+      <div className='grid grid-rows-2 gap-5' id="homeContentContainer">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti quibusdam quod porro blanditiis reprehenderit distinctio illo tenetur officiis, nesciunt ipsum, earum possimus, rerum nemo cupiditate facilis amet cum quam sequi.
         </p>

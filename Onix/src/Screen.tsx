@@ -4,9 +4,9 @@ import "./index.css";
 
 import { FiSettings as Configurations } from "react-icons/fi";
 
-import Home from "./routes/Home";
-import Subject from "./routes/Subject";
-import Settings from "./routes/Settings";
+import HomeView from "./routes/HomeView";
+import SubjectView from "./routes/SubjectView";
+import SettingsView from "./routes/SettingsView";
 import { ReactElement, useState } from "react";
 import Sidebar from "./components/Sidebar/index";
 import Navbar from "./components/Navbar/index";
@@ -64,9 +64,9 @@ export default function Screen(): ReactElement {
             </div>
             <Routes>
               {/* Rotas de Navegação */}
-              <Route path="/" element={<Home />} />
-              <Route path="/subject" element={<Subject />} />
-              <Route path="/settings" element={<Settings />}></Route>
+              <Route path="/" element={<HomeView />} />
+              <Route path="/subject" element={<SubjectView />} />
+              <Route path="/settings" element={<SettingsView />} />
             </Routes>
           </Main.Root>
         </div>
