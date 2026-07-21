@@ -15,11 +15,14 @@ interface SettingSelection {
 
 function SettingSelection({ options }: SettingSelection) {
   return (
-    <select className="w-50 font-bold items-center h-30">
+    <select className="w-auto dark:bg-zinc-600 bg-zinc-500 dark:border-zinc-300 border-zinc-700 font-bold items-center text-center h-30 rounded-[10px]">
       {options.map((option) => {
-        return <option className="font-bold whitespace-nowrap rounded-[5px]" value={option}>{option}</option>
-      })
-      }
+        return (
+          <option className="font-bold" value={option} key={option}>
+            {option}
+          </option>
+        );
+      })}
     </select>
   );
 }
@@ -39,15 +42,12 @@ class SettingsType extends Component<SettingsTypeProps> {
     const { name, description, type } = this.props;
 
     return (
-      <div className="flex gap-3 border-2 dark:border-zinc-600 border-zinc-300 w-120 h-30">
+      <div className="flex gap-3 border-2 dark:border-zinc-600 border-zinc-700 w-120 h-30">
         <div id="settingsTypeContainer">
           <h4 className="font-bold ml-5 text-xl">{name}</h4>
-          <p>{description}</p>
+          <p className="mr-1">{description}</p>
         </div>
-        <div className="">
-          {type}
-        </div>
-        
+        <div className="">{type}</div>
       </div>
     );
   }

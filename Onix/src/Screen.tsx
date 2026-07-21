@@ -18,6 +18,8 @@ type State = boolean;
 
 export default function Screen(): ReactElement {
   const [activeMenu, setActiveMenu] = useState<State>(true);
+  
+  
 
   return (
     <div className="h-screen">
@@ -25,7 +27,7 @@ export default function Screen(): ReactElement {
         <div className="flex dark:text-white text-black space-x-4">
           {/* Barra Lateral */}
           {activeMenu ? (
-            <Sidebar.Root width={35} padding={4}>
+            <Sidebar.Root width={35} padding={5}>
               {/* Barra de Navegação */}
               <Navbar.Root>
                 <Sidebar.Icon
