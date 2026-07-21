@@ -1,57 +1,55 @@
-import { ComponentType, ReactElement } from "react";
+import { Component, Profiler, ReactElement } from "react";
 
-enum SettingsActionTypes {
-  toggle = "toggle",
-  selection = "selection",
+function SettingToggle() {
+  return (
+    <input
+      type="checkbox"
+      className="rounded-full dark:bg-zinc-700 bg-zinc-500"
+    />
+  );
 }
-interface SettingsType {
+
+interface SettingSelection {
+  options: string[];
+}
+
+function SettingSelection({ options }: SettingSelection) {
+  return (
+    <select className="w-50 font-bold items-center h-30">
+      {options.map((option) => {
+        return <option className="font-bold whitespace-nowrap rounded-[5px]" value={option}>{option}</option>
+      })
+      }
+    </select>
+  );
+}
+
+interface SettingsTypeProps {
   name: string;
   description: string;
-  typeAction: SettingsActionTypes;
+  type: ReactElement;
 }
 
-const SettingsToggle = (): ReactElement => {
-  return (
-    <div className="flex border-2 dark:border-zinc-500 border-zinc-700 shadow-2xl shadow-zinc-800 dark:shadow-zinc-200">
-      <input type="checkbox" className="size-4" />
-    </div>
-  );
-};
-const SettingsSelection = (): ReactElement => {
-  return (
-    <div className="flex border-2 dark:border-zinc-500 border-zinc-700 shadow-2xl shadow-zinc-800 dark:shadow-zinc-200">
-      <select name="">
-        <option>Na lateral esquerda</option>
-        <option>No centro superior</option>
-      </select>
-    </div>
-  );
-};
+class SettingsType extends Component<SettingsTypeProps> {
+  constructor(props: SettingsTypeProps) {
+    super(props);
+  }
 
-const SettingsActionMap: Record<SettingsActionTypes, ComponentType> = {
-  toggle: SettingsToggle,
-  selection: SettingsSelection,
-};
+  render() {
+    const { name, description, type } = this.props;
 
-const SettingsType = ({
-  name,
-  description,
-  typeAction,
-}: SettingsType): ReactElement => {
-  const SettingsAction: ComponentType = SettingsActionMap[typeAction];
-
-  return (
-    <div className="flex">
-      <div className="flex flex-col gap-1 " id="settingsTypeContainer">
-        <h4 className="text-xl font-bold ml-4"> {name} </h4>
-        <p>{description}</p>
-      </div>
-      <div className="ml-8">
-        <SettingsAction />
-      </div>
+    return (
+      <div className="flex gap-3 border-2 dark:border-zinc-600 border-zinc-300 w-120 h-30">
+        <div id="settingsTypeContainer">
+          <h4 className="font-bold ml-5 text-xl">{name}</h4>
+          <p>{description}</p>
+        </div>
+        <div className="">
+          {type}
+        </div>
         
-    </div>
-  );
-};
-
-export { SettingsType, SettingsActionTypes };
+      </div>
+    );
+  }
+}
+export { SettingsType, SettingSelection, SettingToggle };

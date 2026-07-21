@@ -25,7 +25,7 @@ export default function Screen(): ReactElement {
         <div className="flex dark:text-white text-black space-x-4">
           {/* Barra Lateral */}
           {activeMenu ? (
-            <Sidebar.Root width={30} padding={5}>
+            <Sidebar.Root width={35} padding={4}>
               {/* Barra de Navegação */}
               <Navbar.Root>
                 <Sidebar.Icon

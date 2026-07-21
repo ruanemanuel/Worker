@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
+import SettingType from "../components/Settings/types"
+
 import Settings from "../components/Settings/main";
-import { SettingsActionTypes } from "../components/Settings/SettingsType";
 
 const SettingsView = (): ReactElement => {
   return (
@@ -11,7 +12,7 @@ const SettingsView = (): ReactElement => {
       
       {/* Configurações */}
       <div className="mt-15 grid grid-rows-3">
-        <Settings.Type name="Modo de Visualização da Barra Lateral" description="Escolha seu modo de visualização da barra lateral" typeAction={SettingsActionTypes.selection} />  
+        <Settings.Type name="Posição da Barra Lateral" description="Escolha seu estilo de configuração da barra lateral" type={<SettingType.Selection options={["Lateral Esquerda", "Centro Superior"]} />} />
       </div>
     </div>
   );
