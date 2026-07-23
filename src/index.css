@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+
+.pointer{
+    cursor: pointer;
+}
+p{
+    border: 2px solid #1e1e1ddd;
+    padding: 18px;
+    box-shadow: 2px 3px 4px #39393c;
+}
+@media(prefers-color-scheme: dark){
+    #homeContentContainer > p{
+        border: 2px solid #6d6e68;
+        box-shadow: 2px 3px 4px #424352;
+    }
+    #settingsTypeContainer > p {
+        border: none;
+        box-shadow: none;
+    }
+    ::picker(select){
+        appearance: base-select;
+        border-radius: 10px;
+        border: 2px solid #7b7b83;
+        color: rgb(59, 58, 58);
+        background-color: rgb(111, 110, 110);
+    }
+
+}
+#settingsTypeContainer > p {
+    border: none;
+    box-shadow: none;
+}
+
+
+input[type="checkbox"]{
+    accent-color: rgb(102, 255, 102);
+}
+
+select{
+    appearance: base-select;
+    
+}
+::picker(select){
+    appearance: base-select;
+    border-radius: 10px;
+    border: 2px solid #7b7b83;
+    color: white;
+    background-color: rgb(38, 37, 37);
+}
+
+@view-transition{
+    navigation: auto
+}
