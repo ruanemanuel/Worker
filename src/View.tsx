@@ -20,11 +20,13 @@ type State = boolean;
 
 export default function View(): ReactElement {
 
+  
+
   const [activeMenu, setActiveMenu] = useState<State>(true);
 
 
   return (
-    <div className="h-screen">
+    <div className="h-screen" style={{viewTransitionName: "refresher"}}>
       <BrowserRouter>
         <div className="flex dark:text-white text-black space-x-4">
           {/* Barra Lateral */}

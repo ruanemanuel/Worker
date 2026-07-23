@@ -52,6 +52,6 @@ select{
 @view-transition{
     navigation: auto;
 }
-::view-transition-group(root){
+::view-transition-group(refresher){
     animation-duration: 2s;
 }
