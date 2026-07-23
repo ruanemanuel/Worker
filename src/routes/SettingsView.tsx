@@ -3,8 +3,7 @@ import SettingType from "../components/Settings/types"
 
 import Settings from "../components/Settings/index";
 
-
-
+import "../index.css"
 
 export default function SettingsView(): ReactElement  {
   return (

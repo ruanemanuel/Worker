@@ -1,5 +1,5 @@
-
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom"
+import "../../index.css"
 import type { ReactNode, ReactElement } from 'react'
 
 interface SidebarIconProps{

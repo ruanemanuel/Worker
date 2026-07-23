@@ -1,6 +1,7 @@
 import type { ReactElement } from "react";
-import { Link } from "react-router-dom";
 
+import "../../index.css"
+import { Link } from "react-router-dom";
 interface NavbarTabProps{
   title: string,
   namePage: string,

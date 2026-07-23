@@ -1,7 +1,6 @@
 import type { ReactElement } from 'react'
+
 import "../index.css"
-
-
 
 export default function HomeView(): ReactElement {
   return (

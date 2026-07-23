@@ -50,5 +50,8 @@ select{
 }
 
 @view-transition{
-    navigation: auto
+    navigation: auto;
+}
+::view-transition-group(root){
+    animation-duration: 2s;
 }
