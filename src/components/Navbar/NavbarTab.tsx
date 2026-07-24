@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 
 import "../../index.css"
-import { Link, useNavigate, type Path } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 interface NavbarTabProps{
   title: string,
   namePage: string,
