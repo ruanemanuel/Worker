@@ -28,8 +28,10 @@ export default function NavbarTab({title, namePage}: NavbarTabProps):ReactElemen
   }
 
   return (
-    <button onClick={() => handleNavigation(`/${namePage}`)} className="hover:bg-white/20 rounded-md p-2 pointer border-[#68696d] border-2 text-center transition duration-200">
-        <b>{title}</b>
-    </button>
+    
+      <button onClick={() => handleNavigation(`/${namePage}`)} className="hover:bg-white/20 rounded-md p-3 pointer border-[#68696d] border-2 text-center transition duration-200 pl-5 pr-5">
+          <div className="navbarTab"><b>{title}</b></div>
+      </button>
+    
   )
 }

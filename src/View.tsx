@@ -1,11 +1,9 @@
 import { IoMdMenu as Menu } from "react-icons/io";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
-
 import { useState } from "react";
 import type { ReactElement } from "react";
 import { FiSettings as Configurations } from "react-icons/fi";
-
 import HomeView from "./routes/HomeView";
 import SubjectView from "./routes/SubjectView";
 import SettingsView from "./routes/SettingsView";
@@ -13,7 +11,6 @@ import Sidebar from "./components/Sidebar/index";
 import Navbar from "./components/Navbar/index";
 import Main from "./components/Main/index";
 import Footer from "./components/Footer/index";
-
 
 type State = boolean;
 
@@ -37,8 +34,7 @@ export default function View(): ReactElement {
                 <Sidebar.Icon
                   icon={
                     <Configurations
-                      className="text-4xl p-1 text-white w-10 justify-center text-center ml-7 border-[#68696d] border hover:bg-white/20 transition duration-200 rounded-[5px] pointer"
-                      
+                      className="text-xs p-1 text-white size-10 justify-center text-center ml-4 hover:bg-white/20 transition duration-200 rounded-[5px] pointer"
                     />
                   }
                   page="settings"
@@ -64,6 +60,7 @@ export default function View(): ReactElement {
                     onClick={() =>
                       setActiveMenu((prevActiveMenu) => !prevActiveMenu)
                     }
+
                   />
                 }
               />

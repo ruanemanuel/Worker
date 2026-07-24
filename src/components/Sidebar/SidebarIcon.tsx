@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import "../../index.css"
 import type { ReactNode, ReactElement } from 'react'
 
@@ -31,8 +31,8 @@ export default function SidebarIcon({icon, page}: SidebarIconProps): ReactElemen
 
 
   return (
-    <button onClick={() => handleNavigation(`/${page}`)} >
-      {icon}
+    <button onClick={() => handleNavigation(`/${page}`)} className="pl-6 pr-5" >
+      <div className="navbarTab"><b>{icon}</b></div>
     </button>
   )
 }

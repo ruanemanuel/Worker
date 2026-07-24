@@ -1,13 +1,22 @@
-import type { ReactNode } from 'react'
+import type { ReactNode } from "react";
 
-interface NavbarRootProps{
-  children?: ReactNode
+interface NavbarRootProps {
+  children?: ReactNode;
 }
 
-export default function NavbarRoot({children}: NavbarRootProps) {
+export default function NavbarRoot({ children }: NavbarRootProps) {
   return (
-    <nav className="flex flex-col gap-5 mt-15 text-white pl-2 pr-2">
+    <nav
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "20px",
+        marginTop: "60px",
+        color: "white",
+        padding: "2px 2px",
+      }}
+    >
       {children}
     </nav>
-  )
+  );
 }

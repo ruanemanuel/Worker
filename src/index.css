@@ -49,6 +49,28 @@ select{
     background-color: rgb(38, 37, 37);
 }
 
+@keyframes bounce{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-5px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+.navbarTab{
+    animation: bounce 0.2s ease;
+    transition: 0.2s;
+}
+
+.navbarTab:hover{
+    transform: translateY(-5px) scale(1.5);
+}
+.navbarTab:hover b{
+    animation: bounce 1s ease;
+}
 @view-transition{
     navigation: auto;
 }
